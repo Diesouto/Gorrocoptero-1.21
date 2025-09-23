@@ -57,6 +57,7 @@ public class GorrocopteroMod
     {
          if (event.getTabKey() == CreativeModeTabs.COMBAT) {
              event.accept(ModItems.HELIX);
+             event.accept(ModItems.GORROCOPTERO);
          }
     }
 

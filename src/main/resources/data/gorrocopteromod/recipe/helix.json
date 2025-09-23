@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "minecraft:phantom_membrane"
+    },
+    "B": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "pattern": [
+    " P ",
+    "PBP",
+    " P "
+  ],
+  "result": {
+    "id": "gorrocopteromod:helix",
+    "count": 1
+  }
+}
