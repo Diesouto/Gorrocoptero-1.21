@@ -1,5 +1,6 @@
 package com.diesouto.gorrocopteromod;
 
+import com.diesouto.gorrocopteromod.item.ModCreativeModeTabs;
 import com.diesouto.gorrocopteromod.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -38,6 +39,8 @@ public class GorrocopteroMod
         MinecraftForge.EVENT_BUS.register(this);
 
         // MY CODE
+        ModCreativeModeTabs.register(modEventBus);
+
         ModItems.register(modEventBus);
 
         // Register the item to a creative tab
