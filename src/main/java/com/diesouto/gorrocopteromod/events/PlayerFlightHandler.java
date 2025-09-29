@@ -18,9 +18,9 @@ public class PlayerFlightHandler {
         // Only run on server-side
         if (player.level().isClientSide) return;
 
-        ItemStack chest = player.getInventory().armor.get(3); // 0=boots,1=legs,2=chest,3=helmet
+        ItemStack helmet = player.getInventory().armor.get(3); // 0=boots,1=legs,2=chest,3=helmet
 
-        if (chest.getItem() instanceof Gorrocoptero) {
+        if (helmet.getItem() instanceof Gorrocoptero) {
             // Give flight
             if (!player.getAbilities().mayfly) {
                 player.getAbilities().mayfly = true;
