@@ -16,7 +16,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> GORROCOPTERO = ITEMS.register("gorrocoptero",
-            () -> new ArmorItem(ModArmorMaterials.GORROCOPTERO_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
+            () -> new Gorrocoptero(ModArmorMaterials.GORROCOPTERO_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
                     new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(18))));
 
     public static void register(IEventBus eventBus) {

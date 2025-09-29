@@ -1,3 +1,7 @@
+GORROCOPTERO MOD
+-------------------------------------------
+Mod que añade un Gorrocóptero para Minecraft 1.21. Realizado como ejercicio para el Curso de Especialización de Desarrollo de Videojuegos.
+GDD Gorrocóptero: https://docs.google.com/document/d/1v58dAOy0WQlyfXngqa7pyECNz2BxZb-jOOPU1dZt2MA/edit?usp=sharing
 
 Source installation information for modders
 -------------------------------------------

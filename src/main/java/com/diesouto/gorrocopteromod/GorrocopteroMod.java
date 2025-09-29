@@ -40,7 +40,6 @@ public class GorrocopteroMod
 
         // MY CODE
         ModCreativeModeTabs.register(modEventBus);
-
         ModItems.register(modEventBus);
 
         // Register the item to a creative tab

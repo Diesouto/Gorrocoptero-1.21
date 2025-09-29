@@ -13,7 +13,7 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, GorrocopteroMod.MODID);
 
-    public static final RegistryObject<CreativeModeTab> ALEXANDRITE_ITEMS_TAB = CREATIVE_MODE_TABS.register("alexanderite_items_tab",
+    public static final RegistryObject<CreativeModeTab> GORROCOPTERO_ITEMS_TAB = CREATIVE_MODE_TABS.register("gorrocoptero_items_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.GORROCOPTERO.get()))
                     .title(Component.translatable("creativetab.gorrocopteromod.items"))
                     .displayItems((itemDisplayParameters, output) -> {
