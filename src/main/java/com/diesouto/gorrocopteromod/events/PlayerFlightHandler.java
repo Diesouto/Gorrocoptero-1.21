@@ -1,5 +1,6 @@
 package com.diesouto.gorrocopteromod.events;
 
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -10,6 +11,8 @@ import com.diesouto.gorrocopteromod.item.Gorrocoptero;
 
 @Mod.EventBusSubscriber
 public class PlayerFlightHandler {
+
+    private static final int DURABILITY_DRAIN_TICKS = 20 * 60; // every 60 seconds
 
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
@@ -25,6 +28,12 @@ public class PlayerFlightHandler {
             if (!player.getAbilities().mayfly) {
                 player.getAbilities().mayfly = true;
                 player.onUpdateAbilities();
+            }
+            // Drain durability while flying
+            if (player.getAbilities().flying) {
+                if (player.tickCount % DURABILITY_DRAIN_TICKS == 0) {
+                    helmet.hurtAndBreak(1, player, EquipmentSlot.HEAD);
+                }
             }
         } else {
             // Remove flight if not in creative/spectator
