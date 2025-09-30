@@ -1,5 +1,6 @@
 {
   "item.gorrocopteromod.helix": "Hélice",
   "item.gorrocopteromod.gorrocoptero": "Gorrocóptero",
-  "creativetab.gorrocopteromod.items": "Gorrocóptero Mod Items"
+  "creativetab.gorrocopteromod.items": "Gorrocóptero Mod Items",
+  "sounds.gorrocopteromod.gorrocoptero_equip": "A volar!"
 }

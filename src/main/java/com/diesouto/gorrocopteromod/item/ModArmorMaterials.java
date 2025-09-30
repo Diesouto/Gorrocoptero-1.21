@@ -28,7 +28,7 @@ public class ModArmorMaterials {
                                                   int enchantability, float toughness, float knockbackResistance,
                                                   Supplier<Item> ingredientItem) {
         ResourceLocation location = ResourceLocation.fromNamespaceAndPath(GorrocopteroMod.MODID, name);
-        Holder<SoundEvent> equipSound = SoundEvents.ARMOR_EQUIP_ELYTRA;
+        Holder<SoundEvent> equipSound = ModSounds.GORROCOPTERO_EQUIP.getHolder().get();
         Supplier<Ingredient> ingredient = () -> Ingredient.of(ingredientItem.get());
         List<ArmorMaterial.Layer> layers = List.of(new ArmorMaterial.Layer(location));
 

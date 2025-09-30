@@ -2,6 +2,7 @@ package com.diesouto.gorrocopteromod;
 
 import com.diesouto.gorrocopteromod.item.ModCreativeModeTabs;
 import com.diesouto.gorrocopteromod.item.ModItems;
+import com.diesouto.gorrocopteromod.item.ModSounds;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -41,6 +42,7 @@ public class GorrocopteroMod
         // MY CODE
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
+        ModSounds.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

@@ -1,0 +1,8 @@
+{
+  "gorrocoptero_equip": {
+    "subtitles": "sounds.gorrocopteromod.gorrocoptero_equip",
+    "sounds": [
+      "gorrocopteromod:gorrocoptero_equip"
+    ]
+  }
+}
