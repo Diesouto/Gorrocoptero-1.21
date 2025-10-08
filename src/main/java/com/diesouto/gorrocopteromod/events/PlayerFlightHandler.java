@@ -24,23 +24,11 @@ public class PlayerFlightHandler {
         ItemStack helmet = player.getInventory().armor.get(3); // 0=boots,1=legs,2=chest,3=helmet
 
         if (helmet.getItem() instanceof Gorrocoptero) {
-            // Give flight
-            if (!player.getAbilities().mayfly) {
-                player.getAbilities().mayfly = true;
-                player.onUpdateAbilities();
-            }
             // Drain durability while flying
             if (player.getAbilities().flying) {
                 if (player.tickCount % DURABILITY_DRAIN_TICKS == 0) {
                     helmet.hurtAndBreak(1, player, EquipmentSlot.HEAD);
                 }
-            }
-        } else {
-            // Remove flight if not in creative/spectator
-            if (!player.isCreative() && !player.isSpectator() && player.getAbilities().mayfly) {
-                player.getAbilities().mayfly = false;
-                player.getAbilities().flying = false;
-                player.onUpdateAbilities();
             }
         }
     }

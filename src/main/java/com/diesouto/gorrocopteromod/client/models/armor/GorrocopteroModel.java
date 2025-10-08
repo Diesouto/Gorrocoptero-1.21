@@ -23,32 +23,53 @@ public class GorrocopteroModel<T extends LivingEntity> extends HumanoidArmorMode
     }
 
     public static LayerDefinition createBodyLayer() {
-        // Create base humanoid mesh
+        // Create base humanoid mesh with default deformation
         MeshDefinition mesh = HumanoidArmorModel.createBodyLayer(new CubeDeformation(0.5f));
         PartDefinition root = mesh.getRoot();
 
-        // Create both head and hat parts explicitly
+        // Define head and hat (armor model convention)
         PartDefinition head = root.addOrReplaceChild("head", CubeListBuilder.create(), PartPose.ZERO);
         root.addOrReplaceChild("hat", CubeListBuilder.create(), PartPose.ZERO);
 
-        // Add our gorrocopter parts to the head
-        head.addOrReplaceChild("base_geo",
-                CubeListBuilder.create()
-                        .texOffs(0, 0)
-                        .addBox(-2F, -9F, -2F, 4F, 1F, 4F),
-                PartPose.ZERO);
-
-        head.addOrReplaceChild("tube_geo",
-                CubeListBuilder.create()
-                        .texOffs(0, 5)
-                        .addBox(-0.5F, -14F, -0.5F, 1F, 5F, 1F),
-                PartPose.ZERO);
+        // ─────────────────────────────
+        // 1. Helix_geo  (propeller blades)
+        // ─────────────────────────────
 
         head.addOrReplaceChild("propeller_geo",
                 CubeListBuilder.create()
-                        .texOffs(8, 0)
-                        .addBox(-5F, -14.5F, -0.5F, 10F, 1F, 1F),
-                PartPose.ZERO);
+                        .texOffs(0, 0)
+                        .addBox(3.0F - 8.0F, 6.5F - 20.0F, 7.5F - 8.0F, 10.0F, 1.0F, 1.0F),
+                PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F));
+
+        // ─────────────────────────────
+        // 2. Top_geo  (center cap)
+        // ─────────────────────────────
+
+        head.addOrReplaceChild("top_geo",
+                CubeListBuilder.create()
+                        .texOffs(0, 2)
+                        .addBox(7.0F - 8.0F, 6.0F - 25.0F, 7.0F - 8.0F, 2.0F, 2.0F, 2.0F),
+                PartPose.offset(0.0F, 0.0F, 0.0F));
+
+        // ─────────────────────────────
+        // 3. Tube_geo  (vertical shaft)
+        // ─────────────────────────────
+
+        head.addOrReplaceChild("tube_geo",
+                CubeListBuilder.create()
+                        .texOffs(0, 6)
+                        .addBox(7.5F - 8.0F, 1.0F - 6.0F, 7.5F - 8.0F, 1.0F, 5.0F, 1.0F),
+                PartPose.offset(0.0F, 0.0F, 0.0F));
+
+        // ─────────────────────────────
+        // 4. Base_geo  (hat base)
+        // ─────────────────────────────
+
+        head.addOrReplaceChild("base_geo",
+                CubeListBuilder.create()
+                        .texOffs(0, 12)
+                        .addBox(6.0F - 8.0F, 0.0F - 12.0F, 6.0F - 8.0F, 4.0F, 1.0F, 4.0F),
+                PartPose.offset(0.0F, 0.0F, 0.0F));
 
         return LayerDefinition.create(mesh, 32, 32);
     }
