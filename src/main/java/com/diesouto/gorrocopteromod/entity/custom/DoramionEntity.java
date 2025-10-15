@@ -3,6 +3,7 @@ package com.diesouto.gorrocopteromod.entity.custom;
 import com.diesouto.gorrocopteromod.item.ModItems;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
@@ -11,7 +12,7 @@ import net.minecraft.world.level.Level;
 
 public class DoramionEntity extends PathfinderMob {
 
-    protected DoramionEntity(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
+    public DoramionEntity(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
         super(p_21683_, p_21684_);
     }
 
@@ -26,4 +27,12 @@ public class DoramionEntity extends PathfinderMob {
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
     }
+
+    public static AttributeSupplier.Builder createAttributes() {
+        return PathfinderMob.createMobAttributes()
+                .add(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH, 20.0D)
+                .add(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED, 0.25D)
+                .add(net.minecraft.world.entity.ai.attributes.Attributes.FOLLOW_RANGE, 16.0D);
+    }
+
 }

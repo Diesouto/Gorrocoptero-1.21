@@ -1,5 +1,6 @@
 package com.diesouto.gorrocopteromod;
 
+import com.diesouto.gorrocopteromod.entity.ModEntities;
 import com.diesouto.gorrocopteromod.item.ModCreativeModeTabs;
 import com.diesouto.gorrocopteromod.item.ModItems;
 import com.diesouto.gorrocopteromod.item.ModSounds;
@@ -43,7 +44,7 @@ public class GorrocopteroMod
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModSounds.register(modEventBus);
-
+        ModEntities.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
