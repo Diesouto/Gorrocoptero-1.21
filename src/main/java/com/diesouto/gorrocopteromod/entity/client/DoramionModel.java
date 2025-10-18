@@ -18,11 +18,15 @@ public class DoramionModel<T extends DoramionEntity> extends HierarchicalModel<T
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(GorrocopteroMod.MODID, "doramion"), "main");
     private final ModelPart head;
     private final ModelPart body;
+    private final ModelPart root;
 
     public DoramionModel(ModelPart root) {
-        this.body = root.getChild("body");
-        this.head = body.getChild("upper").getChild("next").getChild("head");
+        this.root = root;
+        ModelPart actualRoot = root.getChild("root");
+        this.head = actualRoot.getChild("head");
+        this.body = actualRoot.getChild("body");
     }
+
 
     public static LayerDefinition createBodyLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();
@@ -119,11 +123,11 @@ public class DoramionModel<T extends DoramionEntity> extends HierarchicalModel<T
 
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        body.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
+        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
     }
 
     @Override
     public ModelPart root() {
-        return body;
+        return root;
     }
 }

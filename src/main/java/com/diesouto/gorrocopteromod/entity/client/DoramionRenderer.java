@@ -11,7 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 public class DoramionRenderer extends MobRenderer<DoramionEntity, DoramionModel<DoramionEntity>> {
 
     public DoramionRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, new DoramionModel<>(pContext.bakeLayer(DoramionModel.LAYER_LOCATION)), 0.85f);
+        super(pContext, new DoramionModel<>(pContext.bakeLayer(DoramionModel.LAYER_LOCATION)), 0.4f);
     }
 
     @Override
