@@ -22,8 +22,7 @@ public class ModItems {
                     new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(18))));
 
     public static final RegistryObject<Item> DORAMION_SPAWN_EGG = ITEMS.register("doramion_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.DORAMION, 0x1E90FF, 0xFFD700,
-                    new Item.Properties()));
+            () -> new ForgeSpawnEggItem(ModEntities.DORAMION, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
