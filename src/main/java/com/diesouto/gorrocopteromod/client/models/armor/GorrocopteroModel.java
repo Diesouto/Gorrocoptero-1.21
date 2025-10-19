@@ -32,31 +32,47 @@ public class GorrocopteroModel<T extends LivingEntity> extends HumanoidArmorMode
         root.addOrReplaceChild("hat", CubeListBuilder.create(), PartPose.ZERO);
 
         // Add our gorrocopter parts to the head
+
+        // ─────────────────────────────
+        // 1. Base_geo  (hat base)
+        // ─────────────────────────────
         head.addOrReplaceChild("base_geo",
                 CubeListBuilder.create()
                         .texOffs(0, 0)
                         .addBox(-2F, -9F, -2F, 4F, 1F, 4F),
                 PartPose.ZERO);
-
+        // ─────────────────────────────
+        // 2. Tube_geo  (vertical tube)
+        // ─────────────────────────────
         head.addOrReplaceChild("tube_geo",
                 CubeListBuilder.create()
-                        .texOffs(0, 5)
+                        .texOffs(16, 16)
                         .addBox(-0.5F, -14F, -0.5F, 1F, 5F, 1F),
                 PartPose.ZERO);
-
+        // ─────────────────────────────
+        // 3. Top_geo  (helix union point)
+        // ─────────────────────────────
+        head.addOrReplaceChild("top_geo",
+                CubeListBuilder.create()
+                        .texOffs(0, 16)
+                        .addBox(-1F, -15F, -1F, 2F, 2F, 2F),
+                PartPose.ZERO);
+        // ─────────────────────────────
+        // 4. Propeller_geo  (helix tube)
+        // ─────────────────────────────
         head.addOrReplaceChild("propeller_geo",
                 CubeListBuilder.create()
-                        .texOffs(8, 0)
+                        .texOffs(24, 8)
                         .addBox(-5F, -14.5F, -0.5F, 10F, 1F, 1F),
                 PartPose.ZERO);
 
-        return LayerDefinition.create(mesh, 32, 32);
+        return LayerDefinition.create(mesh, 48, 48);
     }
 
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, int rgb) {
         super.renderToBuffer(poseStack, buffer, packedLight, packedOverlay, rgb);
 
-        propeller.yRot += 2f;
+        propeller.yRot += 1.4f;
     }
 }
