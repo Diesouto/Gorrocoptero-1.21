@@ -1,9 +1,12 @@
 package com.diesouto.gorrocopteromod;
 
+import com.diesouto.gorrocopteromod.entity.ModEntities;
+import com.diesouto.gorrocopteromod.entity.client.DoramionRenderer;
 import com.diesouto.gorrocopteromod.item.ModCreativeModeTabs;
 import com.diesouto.gorrocopteromod.item.ModItems;
 import com.diesouto.gorrocopteromod.item.ModSounds;
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -40,10 +43,10 @@ public class GorrocopteroMod
         MinecraftForge.EVENT_BUS.register(this);
 
         // MY CODE
-        ModCreativeModeTabs.register(modEventBus);
+        ModEntities.register(modEventBus);
         ModItems.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
         ModSounds.register(modEventBus);
-
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -79,7 +82,7 @@ public class GorrocopteroMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
+            EntityRenderers.register(ModEntities.DORAMION.get(), DoramionRenderer::new);
         }
     }
 }

@@ -1,6 +1,9 @@
 {
   "item.gorrocopteromod.helix": "Helix",
   "item.gorrocopteromod.gorrocoptero": "Take-copter",
+  "item.gorrocopteromod.doramion_spawn_egg": "Doramion Spawn Egg",
   "creativetab.gorrocopteromod.items": "Take-copter Mod Items",
-  "sounds.gorrocopteromod.gorrocoptero_equip": "Fly away!"
+  "sounds.gorrocopteromod.gorrocoptero_equip": "Fly away!",
+
+  "entity.gorrocopteromod.doramion": "Doramion"
 }
