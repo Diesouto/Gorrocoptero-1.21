@@ -19,7 +19,7 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.HELIX.get());
                         output.accept(ModItems.GORROCOPTERO.get());
-
+                        output.accept(ModItems.DORAYAKI.get());
                         output.accept(ModItems.DORAMION_SPAWN_EGG.get());
                     }).build());
 

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "food",
+  "key": {
+    "W": {
+      "item": "minecraft:wheat"
+    },
+    "S": {
+      "item": "minecraft:sugar"
+    },
+    "E": {
+      "item": "minecraft:egg"
+    },
+    "B": {
+      "item": "minecraft:cocoa_beans"
+    }
+  },
+  "pattern": [
+    "WSW",
+    "BEB",
+    "WSW"
+  ],
+  "result": {
+    "id": "gorrocopteromod:dorayaki",
+    "count": 1
+  }
+}

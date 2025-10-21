@@ -24,6 +24,9 @@ public class ModItems {
     public static final RegistryObject<Item> DORAMION_SPAWN_EGG = ITEMS.register("doramion_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.DORAMION, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
 
+    public static final RegistryObject<Item> DORAYAKI = ITEMS.register("dorayaki",
+            Dorayaki::new);
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
