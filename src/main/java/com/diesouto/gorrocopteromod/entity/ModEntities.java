@@ -16,7 +16,7 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<DoramionEntity>> DORAMION =
             ENTITY_TYPES.register("doramion", () -> EntityType.Builder.of(DoramionEntity::new, MobCategory.CREATURE)
-                    .sized(1.5f, 1.5f).build("doramion"));
+                    .sized(0.6f, 1.3f).build("doramion"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
